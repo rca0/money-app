@@ -1,0 +1,19 @@
+const _ = require('lodash')
+
+module.exports = (req, res, next) => {
+    // bundle contain the list of errors
+    const bundle = res.locals.bundle
+
+    if(bundle.errors) {
+        const errors = parseErrors(bundle.errors)
+        res.status(500).json({ errors })
+    } else {
+        next()
+    }
+}
+
+const parseErrors = (nodeRestfulErrors) => {
+    const errors = []
+    _.forIn(nodeRestfulErrors, error => errors.push())
+    return errors
+}

@@ -1,9 +1,13 @@
 const BillingCycle = require('./billingCycle')
+const errorHandler = require('../common/errorHandler')
 
 BillingCycle.methods(['get', 'post', 'put', 'delete'])
 // if not pass updateOptions function, does not return object updated
 // execute validators when execute updates
 BillingCycle.updateOptions({ new: true, runValidators: true })
+
+// intercept information after POST and PUT action
+BillingCycle.after('post', errorHandler).after('put', errorHandler)
 
 BillingCycle.route('count', (req, res, next) => {
     // mongoose method already exist
