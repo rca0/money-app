@@ -9,8 +9,11 @@
   },
   "dependencies": {
     "body-parser": "1.15.2",
+    "debug": "^4.1.1",
     "express": "4.14.0",
     "express-query-int": "1.0.1",
+    "fresh": "^0.5.2",
+    "mime": "^2.4.4",
     "mongoose": "5.7.5",
     "mongoose-paginate": "5.0.3",
     "node-restful": "0.2.5",
