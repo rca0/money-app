@@ -11,23 +11,22 @@ import Row from '../common/layout/row'
 class Dashboard extends Component {
 
     componentWillMount() {
-        this.props.getSummary
+        this.props.getSummary()
     }
 
     render() {
         const { credit, debt } = this.props.summary
-
         return (
             <div>
-                <ContentHeader title='Dashboard' small='v1.0' />
+                <ContentHeader title='Dashboard' small='Versão 1.0' />
                 <Content>
                     <Row>
                         <ValueBox cols='12 4' color='green' icon='bank'
                             value={`R$ ${credit}`} text='Total Credits' />
                         <ValueBox cols='12 4' color='red' icon='credit-card'
-                            value={`R$ ${debt}`} text='Total Debts' />
+                            value={`R$ ${debt}`} text='Total debts' />
                         <ValueBox cols='12 4' color='blue' icon='money'
-                            value={`R$ ${credit - debt}`} text='Consolidated value' />
+                            value={`R$ ${credit - debt}`} text='Consolided value' />
                     </Row>
                 </Content>
             </div>
