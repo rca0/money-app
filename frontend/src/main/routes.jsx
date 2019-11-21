@@ -3,7 +3,6 @@ import { Router, Route, IndexRoute, Redirect, hashHistory } from 'react-router'
 
 import App from './app'
 import Dashboard from '../dashboard/dashboard'
-// import Dashboard from '../dashboard-without-redux/dashboard-without-redux'
 import BillingCycle from '../billingCycle/billingCycle'
 
 export default props => (
