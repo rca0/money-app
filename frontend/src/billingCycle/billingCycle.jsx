@@ -1,7 +1,13 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-export default props => (
-    <div>
-        <h1>Billing Cycles</h1>
-    </div>
-)
+class BillingCycle extends Component {
+    render() {
+        return (
+            <div>
+                <h1>Hello world</h1>
+            </div>
+        )
+    }
+}
+
+export default BillingCycle
