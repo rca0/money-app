@@ -17,7 +17,7 @@ class BillingCycleList extends Component {
                 <td>{bc.year}</td>
                 <td>
                     <button className='btn btn-warning'
-                        onClick={() => this.props.showUpdate({bc})}>
+                        onClick={() => this.props.showUpdate(bc)}>
                             <i className='fa fa-edit'></i>
                         </button>
                 </td>
