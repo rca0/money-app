@@ -40,6 +40,10 @@ export function update(values) {
     return submit(values, 'put', 'Updated successfully')
 }
 
+export function remove(values) {
+    return submit(values, 'delete', 'Deleted successfully')
+}
+
 function submit(values, method, msg) {
     return dispatch => {
         const id = values._id ? values._id : ''
@@ -52,4 +56,13 @@ function submit(values, method, msg) {
             e.response.data.errors.forEach(error => toastr.error('Error', error))
         })
     }
+}
+
+// TODO: refactor showTabs and showUpdate
+export function showDelete(billingCycle) {
+    return [
+        showTabs('tabDelete'),
+        selectTab('tabDelete'),
+        initialize('billingCycleForm', billingCycle)
+    ]
 }
