@@ -16,16 +16,7 @@ export function getList() {
 }
 
 export function create(values) {
-    return dispatch => {
-        axios.post(`${BASE_URL}`, values)
-        .then(resp => {
-            toastr.success('Added successfully')
-            dispatch(init())
-        })
-        .catch(e => {
-            e.response.data.errors.forEach(error => toastr.error('Error', error))
-        })
-    }
+    return submit(values, 'post', 'Added successfully')
 }
 
 export function showUpdate(billingCycle) {
@@ -43,4 +34,22 @@ export function init() {
         getList(),
         initialize('billingCycleForm', INITIAL_VALUES)
     ]
+}
+
+export function update(values) {
+    return submit(values, 'put', 'Updated successfully')
+}
+
+function submit(values, method, msg) {
+    return dispatch => {
+        const id = values._id ? values._id : ''
+        axios[method](`${BASE_URL}/${id}`, values)
+        .then(resp => {
+            toastr.success(msg)
+            dispatch(init())
+        })
+        .catch(e => {
+            e.response.data.errors.forEach(error => toastr.error('Error', error))
+        })
+    }
 }
