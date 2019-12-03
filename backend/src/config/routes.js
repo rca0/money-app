@@ -13,7 +13,7 @@ module.exports = function(server) {
 
     // Open Routers
     const openApi = express.Router()
-    server.use('/oapi', openApi)
+    server.use('/v1/oapi', openApi)
 
     const AuthService = require('../api/user/authService')
     openApi.post('/login', AuthService.login)
