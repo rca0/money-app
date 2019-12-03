@@ -4,7 +4,7 @@ const auth = require('./auth')
 module.exports = function(server) {
     // JWT Routes
     const protectedApi = express.Router()
-    server.use('./api', protectedApi())
+    server.use('/v1/api', protectedApi())
 
     protectedApi.use(auth)
 
