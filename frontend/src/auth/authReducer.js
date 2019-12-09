@@ -1,4 +1,4 @@
-const userKey = '_moneyapp_user'
+const userKey = '_mymoney_user'
 const INITIAL_STATE = {
     user: JSON.parse(localStorage.getItem(userKey)),
     validToken: false
@@ -7,7 +7,7 @@ const INITIAL_STATE = {
 export default (state = INITIAL_STATE, action) => {
     switch (action.type) {
         case 'TOKEN_VALIDATED':
-            if(action.payload) {
+            if (action.payload) {
                 return { ...state, validToken: true }
             } else {
                 localStorage.removeItem(userKey)

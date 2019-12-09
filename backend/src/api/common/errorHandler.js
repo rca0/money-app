@@ -1,7 +1,6 @@
 const _ = require('lodash')
 
 module.exports = (req, res, next) => {
-    // bundle contain the list of errors
     const bundle = res.locals.bundle
 
     if(bundle.errors) {
@@ -15,5 +14,5 @@ module.exports = (req, res, next) => {
 const parseErrors = (nodeRestfulErrors) => {
     const errors = []
     _.forIn(nodeRestfulErrors, error => errors.push(error.message))
-    return errors
+    return errors 
 }

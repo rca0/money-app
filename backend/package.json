@@ -1,16 +1,17 @@
 {
-  "name": "money-app-backend",
+  "name": "moneyapp",
   "version": "1.0.0",
+  "description": "",
   "main": "src/loader.js",
-  "license": "ISC",
-  "author": "Ruan C Arcega",
-  "keywords": [],
   "scripts": {
     "dev": "nodemon",
-    "production": "pm2 start src/loader.js --name my-money-backend"
+    "production": "pm2 start src/loader.js --name moneyapp-backend"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "bcrypt": "^3.0.6",
+    "bcrypt": "^3.0.7",
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "express-query-int": "^1.0.1",

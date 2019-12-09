@@ -1,10 +1,10 @@
 import React from 'react'
 
 export default props => (
-    <footer className='main-footer'>
-        <strong>
-            Copyright &copy; 2019
-            <a href='https://www.arcega.com.br' target='_blank'> Arcega</a>.
+    <footer className='main-footer'> 
+        <strong> 
+            Copyright &copy; 2017
+            <a href='http://cod3r.com.br' target='_blank' rel="noopener noreferrer"> Cod3r</a>.
         </strong>
     </footer>
 )

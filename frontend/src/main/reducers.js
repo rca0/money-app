@@ -8,12 +8,12 @@ import BillingCycleReducer from '../billingCycle/billingCycleReducer'
 import AuthReducer from '../auth/authReducer'
 
 const rootReducer = combineReducers({
-    auth: AuthReducer,
     dashboard: DashboardReducer,
     tab: TabReducer,
     billingCycle: BillingCycleReducer,
     form: formReducer,
-    toastr: toastrReducer
+    toastr: toastrReducer,
+    auth: AuthReducer
 })
 
 export default rootReducer

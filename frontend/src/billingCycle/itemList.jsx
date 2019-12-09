@@ -6,7 +6,7 @@ import Grid from '../common/layout/grid'
 import Input from '../common/form/input'
 import If from '../common/operator/if'
 
-class itemList extends Component {
+class ItemList extends Component {
 
     add(index, item = {}) {
         if(!this.props.readOnly) {
@@ -25,31 +25,25 @@ class itemList extends Component {
         return list.map((item, index) => (
             <tr key={index}>
                 <td><Field name={`${this.props.field}[${index}].name`} component={Input}
-                    placeholder='Add name' readOnly={this.props.readOnly} /></td>
+                    placeholder='Informe o nome' readOnly={this.props.readOnly} /></td>
                 <td><Field name={`${this.props.field}[${index}].value`} component={Input}
-                    placeholder='Add value' readOnly={this.props.readOnly} /></td>
+                    placeholder='Informe o valor' readOnly={this.props.readOnly} /></td>
                 <If test={this.props.showStatus}>
                     <td><Field name={`${this.props.field}[${index}].status`} component={Input}
-                        placeholder='Add status' readOnly={this.props.readOnly} /></td>
+                        placeholder='Informe o status' readOnly={this.props.readOnly} /></td>
                 </If>
                 <td>
-                    <button
-                        className='btn btn-success'
-                        type='button'
+                    <button type='button' className='btn btn-success'
                         onClick={() => this.add(index + 1)}>
-                            <i className='fa fa-plus'></i>
-                        </button>
-                    <button
-                        className='btn btn-warning'
-                        type='button'
-                        onClick={() => this.add(index + 1, item)}>
-                            <i className='fa fa-clone'></i>
+                        <i className="fa fa-plus"></i>
                     </button>
-                    <button
-                        className='btn btn-danger'
-                        type='button'
+                    <button type='button' className='btn btn-warning'
+                        onClick={() => this.add(index + 1, item)}>
+                        <i className="fa fa-clone"></i>
+                    </button>
+                    <button type='button' className='btn btn-danger'
                         onClick={() => this.remove(index)}>
-                            <i className='fa fa-trash-o'></i>
+                        <i className="fa fa-trash-o"></i>
                     </button>
                 </td>
             </tr>
@@ -64,12 +58,12 @@ class itemList extends Component {
                     <table className='table'>
                         <thead>
                             <tr>
-                                <th>Name</th>
-                                <th>Value</th>
+                                <th>Nome</th>
+                                <th>Valor</th>
                                 <If test={this.props.showStatus}>
                                     <th>Status</th>
                                 </If>
-                                <th className='table-actions'>Actions</th>
+                                <th className='table-actions'>Ações</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -82,7 +76,5 @@ class itemList extends Component {
     }
 }
 
-const mapDispatchToProps = dispatch => bindActionCreators(
-    {arrayInsert, arrayRemove},
-dispatch)
-export default connect(null, mapDispatchToProps)(itemList)
+const mapDispatchToProps = dispatch => bindActionCreators({ arrayInsert, arrayRemove }, dispatch)
+export default connect(null, mapDispatchToProps)(ItemList)
