@@ -1,5 +1,5 @@
 // example
 
 module.exports = {
-    authSecret: ''
+    authSecret: process.env.AUTH_SECRET
 }
